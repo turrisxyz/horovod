@@ -547,13 +547,6 @@ def _get_ips(nics):
         else:
             raise ValueError('No IPv4 IP found found')
 
-    # sort ips, move localhost IP to the front
-    localhost = '127.0.0.1'
-    ips = sorted(list(ips))
-    if localhost in ips:
-        pos = ips.index(localhost)
-        ips = [ips[pos]] + ips[:pos] + ips[pos+1:]
-
     return list(ips)
 
 
